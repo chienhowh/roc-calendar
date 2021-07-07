@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^10.0.14",
-    "@angular/core": "^10.0.14"
+    "@angular/core": "^10.0.14",
+    "ng-zorro-antd": "^11.4.2",
+    "moment": "^2.29.1"
   },
   "dependencies": {
-    "moment": "^2.29.1",
     "tslib": "^2.0.0"
   }
 }

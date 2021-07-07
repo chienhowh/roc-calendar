@@ -1,0 +1,164 @@
+$color-white: #fff;
+$primary-color: #1890ff;
+$secondary-color: #d9d9d9;
+$color-light-gray: #d5d5d5;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+  .date-picker {
+    max-width: 200px;
+    min-width: 160px;
+    // height: 24px;
+    position: relative;
+    // border: 1px solid $secondary-color;
+    // &:hover {
+    //   border: 1px solid $primary-color;
+    // }
+    &:hover {
+      .clear {
+        display: block;
+      }
+    }
+  }
+  // clear icon start
+  .clear {
+    display: none;
+    position: absolute;
+    right: 7px;
+    padding: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    z-index: 999;
+    cursor: pointer;
+  }
+  // clear icon end
+
+  .selected-date {
+    width: 100%;
+    height: 100%;
+  }
+
+  // display format
+
+  // popout modal start
+  .dates {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 115%;
+    // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid $color-light-gray;
+    border-radius: 3px;
+    min-width: 200px;
+    background-color: $color-white;
+    z-index: 999;
+    &.active {
+      display: block;
+    }
+  }
+  //header start
+  .header-box {
+    display: flex;
+    // border: 1px solid $secondary-color;
+    justify-content: space-around;
+    padding: 10px 2px 0;
+  }
+
+  .header-label {
+    flex: 1;
+    @include flex-center();
+  }
+
+  .arrow-btn {
+    cursor: pointer;
+    width: 16px;
+    text-align: center;
+    color: $primary-color;
+    display: inline-block;
+    &:hover {
+      color: #000;
+    }
+  }
+
+  //calendar start
+  .weeks,
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .weeks {
+    color: $primary-color;
+  }
+
+  .week,
+  .day {
+    @include flex-center();
+  }
+
+  .day,
+  .year {
+    cursor: pointer;
+  }
+
+  .years,
+  .months {
+    @include flex-center();
+  }
+
+  .not-present {
+    cursor: not-allowed;
+    color: $color-light-gray;
+  }
+
+  .day.selected {
+    background-color: $primary-color;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+
+  .day.selected.not-present {
+    background-color: $color-light-gray;
+  }
+
+  // 底部今天
+  .today {
+    @include flex-center();
+    border-top: 1px solid $primary-color;
+    color: $primary-color;
+    cursor: pointer;
+    &.not-present {
+      color: $color-light-gray;
+      cursor: not-allowed;
+    }
+  }
+
+  .hr {
+    color: $color-light-gray;
+    margin: 10px;
+    opacity: 0.8;
+  }
+
+  .suffix-icon {
+    color: $primary-color;
+  }
+
+
+::ng-deep.year-select {
+  .ant-select-selection-item {
+    padding-right: 15px !important;
+  }
+
+  .ant-select-item {
+    padding: 5px 8px;
+  }
+}

@@ -50,6 +50,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "projects/demo/src/styles.scss"
             ],
             "scripts": []
@@ -149,6 +150,33 @@
     "roc-picker": {
       "projectType": "library",
       "root": "projects/roc-picker",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
       "sourceRoot": "projects/roc-picker/src",
       "prefix": "lib",
       "architect": {
