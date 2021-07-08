@@ -8,15 +8,15 @@ import * as moment from 'moment';
 })
 export class AppComponent {
   title = 'demo';
-  normal ='';
-// Range Picker Start
-dateGroup: number[] = [];
+  normal = '';
+  // Range Picker Start
+  dateGroup: number[] = [moment().valueOf(), moment('2022/01/01').valueOf()];
 
-/** 最大/最小日 */
-startDate = moment().subtract(10, 'm').format('YYYY/MM/DD');
-endDate = moment().add(30, 'd').format('YYYY/MM/DD');
+  /** 最大/最小日 */
+  startDate = moment().subtract(10, 'y').format('YYYY/MM/DD');
+  endDate = moment().add(30, 'd').format('YYYY/MM/DD');
 
-  log(e){
+  log(e) {
     console.log(e);
   }
 }
