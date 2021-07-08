@@ -1,12 +1,16 @@
 <div class="center">
-  <lib-roc-picker></lib-roc-picker>
-  <lib-date-picker
-    [(ngModel)]="normal"
-    (ngModelChange)="log($event)"
-  ></lib-date-picker>
-  <!-- <nz-select ngModel="lucy">
-    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-    <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
-  </nz-select> -->
+  <div>
+    <lib-date-picker
+      [(ngModel)]="normal"
+      (ngModelChange)="log($event)"
+    ></lib-date-picker>
+  </div>
+  <div>
+    <lib-range-picker
+      [startDate]="startDate"
+      [endDate]="endDate"
+      [(ngModel)]="dateGroup"
+      (ngModelChange)="log($event)"
+    ></lib-range-picker>
+  </div>
 </div>

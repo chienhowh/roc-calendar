@@ -1,1 +1,26 @@
-<p>range-picker works!</p>
+<div class="calendar-box">
+  <lib-date-picker
+    [(ngModel)]="firstDate"
+    (ngModelChange)="checkStart()"
+    class="start-date"
+    [mode]="mode"
+    [numberOnly]="numberOnly"
+    [adType]="adType"
+    [endDate]="endDate"
+    [startDate]="startDate"
+    [disabled]="disabled"
+    [showClear]="showClear"
+  ></lib-date-picker>
+  <lib-date-picker
+    [(ngModel)]="secondDate"
+    (ngModelChange)="checkEnd()"
+    class="end-date"
+    [mode]="mode"
+    [numberOnly]="numberOnly"
+    [adType]="adType"
+    [endDate]="endDate"
+    [startDate]="startDate"
+    [disabled]="disabled"
+    [showClear]="showClear"
+  ></lib-date-picker>
+</div>

@@ -33,6 +33,8 @@ import { CommonModule } from '@angular/common';
   ],
   exports: [
     RocPickerComponent,
-    DatepickerComponent]
+    DatepickerComponent,
+    RangePickerComponent
+  ]
 })
 export class RocPickerModule { }
